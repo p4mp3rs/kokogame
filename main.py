@@ -1,4 +1,5 @@
 from pygame import *
+import pygame
 from button import Button
 from sprite import Player,Egg,GameSprite
 from random import randint
@@ -14,7 +15,7 @@ btn2 = Button('exit.png', 300,200,100,50)
 
 eggs = []
 run = False
-hen = Player('kokohen.png',345,400,45,45,5)
+hen = Player('kokohen.png',345,400,45,45,10)
 for i in range(6):
     egg = Egg('kokoegg.png',randint(80,650),randint(0,80),30,30,randint(1,2))
     eggs.append(egg)
@@ -40,6 +41,12 @@ while game:
         for e in eggs:
             e.update(window)
         
+        for e in eggs:
+            if e.rect.colliderect(hen.rect):
+                score += 1
+                egg.rect.y = randint(0,80)
+                egg.rect.x = randint(50,650)
+                egg.speed = randint(1,2)
 
         
         window.blit(text,(20,20))

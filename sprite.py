@@ -28,7 +28,6 @@ class Player(GameSprite):
 class Egg(GameSprite):
     def update(self, window):
         self.rect.y = self.rect.y + self.speed
-        global lost
         if self.rect.y > 500:
             self.rect.y = randint(0,80)
             self.rect.x = randint(50,650)

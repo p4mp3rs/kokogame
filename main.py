@@ -73,7 +73,7 @@ while game:
                 text = font.render('Score:'+str(score),True,(255,212,57))
                 window.blit(text,(20,20))
             if n.rect.y > 490:
-                lost += 1
+                lost += 3
                 n.rect.y = randint(0,80)
                 n.rect.x = randint(50,650)
                 n.speed = randint(1,2)

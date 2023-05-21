@@ -47,10 +47,9 @@ while game:
             if e.key == K_ESCAPE:
                 run = False
     
-
+    window.blit(background_image, (0,0)) 
 
     if run:
-        window.blit(background_image, (0,0)) 
         hen.draw(window)
         hen.move()
         for n in normaleggs:
